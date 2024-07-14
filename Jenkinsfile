@@ -16,11 +16,11 @@ pipeline{
             }
             steps{
                 sh 'cd $WORSPACE'
-                sh 'docker build -f Dockerfile -t dhivya2409/prt .'
+                sh 'sudo docker build -f Dockerfile -t dhivya2409/prt .'
                 withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'DOCKER_HUB_PASSWORD')]) {
-                            sh "docker login -u dhivya2409 -p ${DOCKER_HUB_PASSWORD}"
+                            sh "sudo docker login -u dhivya2409 -p ${DOCKER_HUB_PASSWORD}"
 }
-                sh 'docker push dhivya2409/prt'
+                sh 'sudo docker push dhivya2409/prt'
              }
         }
         stage("deploy"){
