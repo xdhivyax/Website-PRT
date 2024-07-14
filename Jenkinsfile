@@ -6,7 +6,7 @@ pipeline{
                 label 'kube-master'
             }
             steps{
-                git 'https://github.com/xdhivyax/Website-PRT.git'
+                git branch: 'main', url: 'https://github.com/xdhivyax/Website-PRT.git'
             }
             }
         
